@@ -41,6 +41,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         arr[i] = rand();
     }
+    cout<<"array generate thai gai"<<endl;
 
     int num_threads = 12; // set number of threads
     omp_set_num_threads(num_threads);
@@ -57,7 +58,7 @@ int main() {
     parallel_bubble_sort(arr, n, num_threads);
     clock_t end_par = clock();
     double time_par = double(end_par - start_par) / CLOCKS_PER_SEC;
-    cout << "Parallel bubble sort took " << time_par << " seconds." << endl;
+    cout << "Parallel bubble sort took " << time_par-time_seq << " seconds." << endl;
 
     return 0;
 }
